@@ -1,5 +1,5 @@
 {
-  "name": "taskmanager",
+  "name": "user-service",
   "version": "1.0.0",
   "description": "",
   "homepage": "https://github.com/AjinkyaD3/Task-Manager#readme",
@@ -15,6 +15,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "dev": "nodemon index.js"
   },
   "dependencies": {
