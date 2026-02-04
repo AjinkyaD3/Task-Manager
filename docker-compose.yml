@@ -17,6 +17,22 @@ services:
     environment:
       - MONGO_URL=mongodb://mongo:27017/taskmanager
 
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  notification-service:
+    build: ./notification-service
+    container_name: notification-service
+    depends_on:
+      - rabbitmq
+    environment:
+      - RABBITMQ_URL=amqp://rabbitmq
+
   task-service:
     build: ./task-service
     container_name: task-service
@@ -24,6 +40,7 @@ services:
       - "3002:3002"
     depends_on:
       - mongo
+      - rabbitmq
     environment:
       - MONGO_URL=mongodb://mongo:27017/taskmanager
 

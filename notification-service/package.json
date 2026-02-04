@@ -1,5 +1,5 @@
 {
-  "name": "taskmanager",
+  "name": "notification-service",
   "version": "1.0.0",
   "description": "",
   "homepage": "https://github.com/AjinkyaD3/Task-Manager#readme",
@@ -18,9 +18,7 @@
     "dev": "nodemon index.js"
   },
   "dependencies": {
-    "body-parser": "^2.2.2",
-    "dotenv": "^17.2.3",
-    "express": "^5.2.1",
-    "mongoose": "^9.1.5"
+    "amqplib": "^0.10.9",
+    "dotenv": "^16.4.7"
   }
 }
