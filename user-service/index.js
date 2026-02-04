@@ -9,7 +9,7 @@ const PORT = 3001;
 const app = express();
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost:27017/taskmanager').then(() => {
+mongoose.connect('mongodb://mongo:27017/taskmanager').then(() => {
     log('Connected to MongoDB');
 }).catch((err) => {
     error('Failed to connect to MongoDB', err);
